@@ -7,6 +7,17 @@
 setlocal foldmethod=expr
 setlocal foldexpr=MarkdownFold(v:lnum)
 
+if exists('b:undo_ftplugin')
+  let b:undo_ftplugin .= ' | '
+else
+  let b:undo_ftplugin = ''
+endif
+let b:undo_ftplugin .= 'setl fdm< fde<'
+
+if exists('*MarkdownFold')
+  finish
+endif
+
 function! MarkdownFold(lnum)
   let head = s:head(a:lnum)
   if head
@@ -21,10 +32,3 @@ function! s:head(lnum)
   return strlen(matchstr(getline(a:lnum), '^#*'))
 endfunction
 
-
-if exists('b:undo_ftplugin')
-  let b:undo_ftplugin .= ' | '
-else
-  let b:undo_ftplugin = ''
-endif
-let b:undo_ftplugin .= 'setl fdm< fde<'
