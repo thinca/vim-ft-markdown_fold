@@ -5,14 +5,14 @@
 "          <http://creativecommons.org/licenses/by/2.1/jp/deed.en>
 
 setlocal foldmethod=expr
-setlocal foldexpr=MarkdownFold()
+setlocal foldexpr=MarkdownFold(v:lnum)
 
-function! MarkdownFold()
-  let head = s:head(v:lnum)
+function! MarkdownFold(lnum)
+  let head = s:head(a:lnum)
   if head
     return head
-  elseif v:lnum != line('$') && getline(v:lnum + 1) =~ '^#'
-    return '<' . s:head(v:lnum + 1)
+  elseif a:lnum != line('$') && getline(a:lnum + 1) =~ '^#'
+    return '<' . s:head(a:lnum + 1)
   endif
   return '='
 endfunction
