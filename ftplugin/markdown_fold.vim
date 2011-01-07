@@ -22,13 +22,30 @@ function! MarkdownFold(lnum)
   let head = s:head(a:lnum)
   if head
     return head
-  elseif a:lnum != line('$') && getline(a:lnum + 1) =~ '^#'
-    return '<' . s:head(a:lnum + 1)
+  elseif a:lnum != line('$')
+    let next = s:head(a:lnum + 1)
+    if next
+      return '<' . next
+    endif
   endif
   return '='
 endfunction
 
 function! s:head(lnum)
-  return strlen(matchstr(getline(a:lnum), '^#*'))
+  let current = getline(a:lnum)
+  let sharps = strlen(matchstr(current, '^#*'))
+  if sharps
+    return sharps
+  endif
+
+  if current =~ '\S'
+    let next = getline(a:lnum + 1)
+    if next =~ '^=\+$'
+      return 1
+    elseif next =~ '^-\+$'
+      return 2
+    endif
+  endif
+  return 0
 endfunction
 
