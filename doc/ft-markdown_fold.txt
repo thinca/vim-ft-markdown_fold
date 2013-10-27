@@ -1,0 +1,52 @@
+*ft-markdown_fold.txt*	Folding setting for markdown.
+
+Version: 0.1.1
+Author : thinca <thinca+vim@gmail.com>
+License: zlib License
+
+==============================================================================
+CONTENTS					*ft-markdown_fold-contents*
+
+INTRODUCTION			|ft-markdown_fold-introduction|
+CHANGELOG			|ft-markdown_fold-changelog|
+
+
+
+==============================================================================
+INTRODUCTION					*ft-markdown_fold-introduction*
+
+*ft-markdown_fold.vim* is a Vim plugin to provide the setting for folding of
+markdown.
+
+This plugin folds the headers of markdown.
+>
+	Level 1
+	=======
+	
+	Level 2
+	-------
+	
+	### Level 3
+	
+	<h4>Level 4</h4>
+
+Requirements:
+- Vim 7.3 or later
+
+Latest version:
+https://github.com/thinca/vim-ft-markdown_fold
+
+
+
+==============================================================================
+CHANGELOG					*ft-markdown_fold-changelog*
+
+0.1.1	2011-01-08
+	- Underlined headers support.
+
+0.1.0	2010-10-04
+	- Initial version.
+
+
+==============================================================================
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl
