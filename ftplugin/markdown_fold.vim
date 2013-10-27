@@ -38,6 +38,12 @@ function! s:head(lnum)
     return sharps
   endif
 
+  " <h2> <h3> ...
+  let h = matchstr(current, '^\s*<\s*h\zs\d\ze\>') - 0
+  if h
+    return h
+  endif
+
   if current =~ '\S'
     let next = getline(a:lnum + 1)
     if next =~ '^=\+$'
