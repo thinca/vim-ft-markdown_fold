@@ -1,6 +1,6 @@
 *ft-markdown_fold.txt*	Folding setting for markdown.
 
-Version: 0.2.0
+Version: 0.3.0
 Author : thinca <thinca+vim@gmail.com>
 License: zlib License
 
@@ -40,6 +40,9 @@ https://github.com/thinca/vim-ft-markdown_fold
 
 ==============================================================================
 CHANGELOG					*ft-markdown_fold-changelog*
+
+0.3.0	2014-11-02
+	- Autoloadize.
 
 0.2.0	2013-10-27
 	- HTML section tag support.

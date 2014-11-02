@@ -1,5 +1,5 @@
 " Folding setting for markdown.
-" Version: 0.2.0
+" Version: 0.3.0
 " Author : thinca <thinca+vim@gmail.com>
 " License: zlib License
 
