@@ -30,6 +30,9 @@ This plugin folds the headers of markdown.
 	
 	<h4>Level 4</h4>
 
+Set up:
+put "filetype plugin on" at your vimrc
+
 Requirements:
 - Vim 7.3 or later
 
